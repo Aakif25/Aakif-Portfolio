@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07111f" />
+  <meta name="description" content="Aakif Ahamed — Cybersecurity-focused IT undergraduate, student developer and freelance creator." />
+  <title>Aakif Ahamed | 3D Portfolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="spaceCanvas" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <header class="topbar" id="topbar">
+    <a href="#home" class="brand" aria-label="Aakif Ahamed home">
+      <span class="brand-text brand-full">Aakif Ahamed</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-content reveal">
+        <div class="eyebrow"><span class="pulse-dot"></span> Available for projects & learning opportunities</div>
+        <h1>Hi, I’m <span class="gradient-text">Aakif Ahamed.</span></h1>
+        <h2><span id="typedRole">Undergraduate</span><span class="type-caret">_</span></h2>
+
+          <div class="mobile-hero-art reveal" aria-hidden="true">
+          <div class="mobile-grid"></div>
+          <div class="mobile-glow mobile-glow-a"></div>
+          <div class="mobile-glow mobile-glow-b"></div>
+          <div class="mobile-orbit mobile-orbit-a"></div>
+          <div class="mobile-orbit mobile-orbit-b"></div>
+          <div class="mobile-terminal">
+            <div class="terminal-bar"><i></i><i></i><i></i><span>portfolio.sh</span></div>
+            <div class="terminal-body">
+              <p><b>$</b> whoami</p>
+              <strong>Aakif Ahamed</strong>
+              <p><b>&gt;</b> student_developer</p>
+              <p><b>&gt;</b> cyber_security<span class="terminal-caret">_</span></p>
+            </div>
+            <div class="terminal-scan"></div>
+          </div>
+          <div class="mobile-core"><span>AA</span><small>BUILD MODE</small></div>
+          <div class="mobile-badge badge-web">&lt;/&gt;<small>WEB</small></div>
+          <div class="mobile-badge badge-ai">AI<small>ML</small></div>
+          <div class="mobile-badge badge-sec">SEC<small>CYBER</small></div>
+          <div class="mobile-badge badge-iot">IoT<small>BUILD</small></div>
+        </div>
+        <p class="hero-copy">Cybersecurity-focused IT undergraduate with practical experience in web development, software development, AI/ML, IoT, and graphic design. I enjoy turning ideas into practical digital solutions while continuously building my security knowledge.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary magnetic" href="#projects"><span>View My Projects</span><b>↗</b></a>
+          <a class="btn btn-secondary magnetic" href="#contact"><span>Contact Me</span><b>✦</b></a>
+        </div>
+        <div class="hero-stats">
+          <div><strong data-count="9">0</strong><span>Project Categories</span></div>
+          <div><strong data-count="5">0</strong><span>Development Areas</span></div>
+          <div><strong data-count="2">0</strong><span>External Courses</span></div>
+          <div><strong data-count="3">0</strong><span>Languages</span></div>
+        </div>
+      </div>
+
+
+      <div class="hero-visual reveal" aria-label="Interactive anime developer character">
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+        <div class="floating-chip chip-one">&lt;/&gt;</div>
+        <div class="floating-chip chip-two">AI</div>
+        <div class="floating-chip chip-three">SEC</div>
+        <div class="floating-chip chip-four">IoT</div>
+        <div class="character-stage" id="characterStage">
+          <div class="character-shadow"></div>
+          <svg class="anime-svg-avatar" viewBox="0 0 560 660" role="img" aria-label="Interactive original anime developer avatar">
+            <defs>
+              <linearGradient id="hoodieG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#202939"/>
+                <stop offset="0.52" stop-color="#0d1420"/>
+                <stop offset="1" stop-color="#151020"/>
+              </linearGradient>
+              <linearGradient id="skinG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f5c59f"/>
+                <stop offset="0.58" stop-color="#d99772"/>
+                <stop offset="1" stop-color="#b96f58"/>
+              </linearGradient>
+              <linearGradient id="hairG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#1c2432"/>
+                <stop offset="0.45" stop-color="#080c12"/>
+                <stop offset="1" stop-color="#20132c"/>
+              </linearGradient>
+              <linearGradient id="eyeG" x1="0" x2="1">
+                <stop offset="0" stop-color="#694a32"/>
+                <stop offset="0.55" stop-color="#2b1c16"/>
+                <stop offset="1" stop-color="#8d613b"/>
+              </linearGradient>
+              <linearGradient id="accentG" x1="0" x2="1">
+                <stop offset="0" stop-color="#63f4ff"/>
+                <stop offset="1" stop-color="#a875ff"/>
+              </linearGradient>
+              <filter id="avatarShadow" x="-40%" y="-40%" width="180%" height="190%">
+                <feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#000" flood-opacity=".46"/>
+              </filter>
+              <filter id="eyeGlow" x="-120%" y="-120%" width="340%" height="340%">
+                <feGaussianBlur stdDeviation="3" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <g class="avatar-ring" opacity=".82">
+              <ellipse cx="280" cy="575" rx="185" ry="38" fill="none" stroke="url(#accentG)" stroke-width="2.5" stroke-dasharray="14 12"/>
+              <ellipse cx="280" cy="575" rx="125" ry="24" fill="none" stroke="#63f4ff" stroke-width="1.5" opacity=".35"/>
+            </g>
+
+            <g id="bodyRigSvg" filter="url(#avatarShadow)">
+              <path d="M95 650 C104 515 159 448 235 430 C251 426 266 424 280 424 C294 424 309 426 325 430 C401 448 456 515 465 650 Z" fill="url(#hoodieG)" stroke="#79eaff" stroke-opacity=".12" stroke-width="2"/>
+              <path d="M160 505 C188 467 222 447 248 440 L280 505 L205 552 Z" fill="#1a2737" opacity=".86"/>
+              <path d="M400 505 C372 467 338 447 312 440 L280 505 L355 552 Z" fill="#1a2737" opacity=".86"/>
+              <path d="M230 432 C243 420 249 405 251 382 L309 382 C311 405 317 420 330 432 C319 456 302 470 280 470 C258 470 241 456 230 432 Z" fill="url(#skinG)"/>
+              <path d="M246 430 Q280 457 314 430" fill="none" stroke="#0a111b" stroke-width="17" stroke-linecap="round" opacity=".95"/>
+              <path d="M216 458 L280 523 L344 458" fill="none" stroke="#29374a" stroke-width="9" stroke-linecap="round" opacity=".85"/>
+              <path d="M238 472 L222 590" stroke="#56677a" stroke-width="4" stroke-linecap="round"/>
+              <path d="M322 472 L338 590" stroke="#56677a" stroke-width="4" stroke-linecap="round"/>
+              <rect x="217" y="586" width="10" height="22" rx="4" fill="#8a9aaa"/>
+              <rect x="333" y="586" width="10" height="22" rx="4" fill="#8a9aaa"/>
+              <path d="M280 492 V648" stroke="#63f4ff" stroke-opacity=".08" stroke-width="2"/>
+            </g>
+
+            <g id="headRigSvg" class="svg-head-rig" filter="url(#avatarShadow)">
+              <ellipse cx="280" cy="282" rx="112" ry="139" fill="url(#skinG)"/>
+              <ellipse cx="173" cy="293" rx="19" ry="39" fill="#d58d70"/>
+              <ellipse cx="387" cy="293" rx="19" ry="39" fill="#d58d70"/>
+
+              <path d="M171 284 C151 175 190 104 277 93 C371 81 423 151 394 275 C374 231 350 205 325 188 C295 213 255 231 207 224 C195 243 184 265 179 291 Z" fill="url(#hairG)"/>
+              <path d="M190 222 C204 153 245 113 298 110 C344 107 380 136 394 193 C366 168 333 158 299 169 C261 182 229 205 190 222 Z" fill="#33425a" opacity=".38"/>
+              <path d="M205 159 C229 110 273 84 324 91 C284 100 255 125 239 166 Z" fill="#0b1018"/>
+              <path d="M306 105 C350 108 387 139 399 181 C369 152 340 142 309 146 Z" fill="#0a0f16"/>
+              <path d="M167 244 C148 211 155 174 180 150 C175 184 182 214 200 236 Z" fill="#0b1119"/>
+              <path d="M393 241 C410 210 405 176 385 150 C391 181 382 215 364 237 Z" fill="#0b1119"/>
+              <path d="M227 111 C252 84 289 73 318 82 C287 88 260 104 239 128 Z" fill="#3d2349" opacity=".34"/>
+
+              <path d="M211 265 Q238 247 262 264" fill="none" stroke="#2d2222" stroke-width="7" stroke-linecap="round"/>
+              <path d="M298 264 Q325 247 351 266" fill="none" stroke="#2d2222" stroke-width="7" stroke-linecap="round"/>
+
+              <g id="eyeWhitesSvg">
+                <path d="M209 288 Q237 267 265 289 Q238 313 209 288 Z" fill="#fff9f3"/>
+                <path d="M295 289 Q324 267 353 289 Q324 313 295 289 Z" fill="#fff9f3"/>
+              </g>
+              <g id="pupilsRigSvg" class="svg-pupils-rig">
+                <ellipse cx="239" cy="290" rx="12" ry="14" fill="url(#eyeG)"/>
+                <ellipse cx="324" cy="290" rx="12" ry="14" fill="url(#eyeG)"/>
+                <ellipse cx="239" cy="292" rx="5.6" ry="7" fill="#08090c"/>
+                <ellipse cx="324" cy="292" rx="5.6" ry="7" fill="#08090c"/>
+                <circle cx="235" cy="286" r="3" fill="#aefbff" filter="url(#eyeGlow)"/>
+                <circle cx="320" cy="286" r="3" fill="#aefbff" filter="url(#eyeGlow)"/>
+              </g>
+
+              <path d="M280 301 C274 325 275 334 286 337" fill="none" stroke="#a8675c" stroke-width="4" stroke-linecap="round" opacity=".76"/>
+              <path d="M248 359 Q280 376 313 358" fill="none" stroke="#7b444b" stroke-width="5" stroke-linecap="round"/>
+              <path d="M254 361 Q280 368 306 359" fill="#e89c9f" opacity=".34"/>
+              <path d="M195 329 Q207 375 246 397" fill="none" stroke="#8f584d" stroke-opacity=".28" stroke-width="3"/>
+              <path d="M365 329 Q354 375 315 397" fill="none" stroke="#8f584d" stroke-opacity=".25" stroke-width="3"/>
+              <path d="M247 395 Q280 414 313 395" fill="none" stroke="#bb725f" stroke-opacity=".42" stroke-width="2.5"/>
+            </g>
+          </svg>
+          <div class="stage-label"><span></span> INTERACTIVE ANIME AVATAR</div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to about"><span>SCROLL</span><i></i></a>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-heading reveal">
+        <span class="section-number">01</span>
+        <div><p>WHO I AM</p><h2>About <span>Me</span></h2></div>
+      </div>
+      <div class="about-grid">
+        <article class="glass-card about-copy reveal tilt-card">
+          <p>I am <strong>Aakif Ahamed</strong>, an undergraduate pursuing a <strong>BSc (Hons) in Information Technology specializing in Cyber Security</strong> at the <strong>Sri Lanka Institute of Information Technology (SLIIT)</strong>, currently in <strong>Year 2, Semester 2</strong>.</p>
+          <p>I have a strong interest in cybersecurity, web development, and software development. Through academic, client-based, and freelance projects, I have gained practical experience creating web applications, desktop applications, AI/ML solutions, IoT systems, and creative digital designs.</p>
+          <p>I enjoy transforming ideas and requirements into practical solutions, and I continuously explore new technologies as I work toward becoming a professional cybersecurity specialist.</p>
+          <div class="signature">Aakif <span>Ahamed</span></div>
+        </article>
+        <div class="about-side">
+          <article class="glass-card focus-card reveal tilt-card">
+            <div class="icon-box">⌁</div>
+            <p class="mini-label">CAREER OBJECTIVE</p>
+            <h3>Build secure, reliable technology.</h3>
+            <p>To become a skilled cybersecurity professional through practical security experience, continuous technical learning, and modern information-security knowledge.</p>
+          </article>
+          <article class="glass-card path-card reveal tilt-card">
+            <p class="mini-label">MY DIRECTION</p>
+            <div class="pathline"><span>Web</span><b>→</b><span>Software</span><b>→</b><span>AI/ML</span><b>→</b><span>IoT</span><b>→</b><span class="active">Cybersecurity</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-heading reveal">
+        <span class="section-number">02</span>
+        <div><p>MY TOOLKIT</p><h2>Technical <span>Skills</span></h2></div>
+      </div>
+      <div class="skill-grid">
+        <article class="skill-card reveal tilt-card"><div class="skill-icon">&lt;/&gt;</div><h3>Development</h3><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Java</span><span>Python</span><span>PHP</span><span>JSP</span><span>Node.js</span></div></article>
+        <article class="skill-card reveal tilt-card"><div class="skill-icon">DB</div><h3>Databases</h3><div class="tags"><span>MySQL</span><span>SQL Server</span><span>SQLite</span><span>Database Integration</span><span>CRUD Operations</span></div></article>
+        <article class="skill-card reveal tilt-card"><div class="skill-icon">AI</div><h3>AI / Machine Learning</h3><div class="tags"><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>SVM</span><span>Streamlit</span><span>Classification</span></div></article>
+        <article class="skill-card reveal tilt-card"><div class="skill-icon">IoT</div><h3>IoT / Embedded</h3><div class="tags"><span>Arduino</span><span>C/C++</span><span>Ultrasonic</span><span>Moisture Sensor</span><span>IR Sensor</span><span>Embedded Systems</span></div></article>
+        <article class="skill-card reveal tilt-card"><div class="skill-icon">UI</div><h3>Web & Tools</h3><div class="tags"><span>Responsive Design</span><span>Git</span><span>GitHub</span><span>Electron</span><span>Web Hosting</span><span>Domain Management</span></div></article>
+        <article class="skill-card reveal tilt-card"><div class="skill-icon">✦</div><h3>Design & Office</h3><div class="tags"><span>Photoshop</span><span>Illustrator</span><span>Canva</span><span>Word</span><span>Excel</span><span>PowerPoint</span></div></article>
+      </div>
+
+      <div class="cyber-panel reveal">
+        <div class="cyber-core"><div class="cyber-ring r1"></div><div class="cyber-ring r2"></div><div class="cyber-ring r3"></div><div class="cyber-lock">⌾</div></div>
+        <div>
+          <p class="mini-label">CYBERSECURITY · ACADEMIC SPECIALIZATION</p>
+          <h3>Building the foundation now. <span>Practical expertise next.</span></h3>
+          <p>My current cybersecurity profile is based on academic specialization, information-security fundamentals, basic cybersecurity knowledge, interest in modern security technologies, and continuous self-learning.</p>
+          <div class="tags"><span>Cyber Security Specialization</span><span>Information Security Fundamentals</span><span>Continuous Self-Learning</span><span>Security Career Focus</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-heading reveal">
+        <span class="section-number">03</span>
+        <div><p>WHAT I DO</p><h2>Professional <span>Experience</span></h2></div>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-meta">PROJECT-BASED / ONGOING</div><div class="timeline-card tilt-card"><h3>Freelance Web Developer</h3><p class="company">Various Clients</p><p>Designed and developed responsive websites and web-based management systems, integrated databases, implemented CRUD operations, tested and debugged applications, and prepared projects for deployment.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span><span>Java</span><span>JSP</span><span>SQL Server</span><span>Git/GitHub</span></div></div></article>
+        <article class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-meta">PROJECT-BASED</div><div class="timeline-card tilt-card"><h3>Freelance Software Developer</h3><p class="company">Private Client Projects</p><p>Developed customized business software, including Mini POS solutions for product, inventory, sales, billing, and customer management. Worked on interfaces, application logic, databases, testing and troubleshooting.</p><div class="tags"><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Electron</span><span>SQLite</span></div></div></article>
+        <article class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-meta">PROJECT-BASED / ONGOING</div><div class="timeline-card tilt-card"><h3>Freelance Graphic Designer</h3><p class="company">Various Clients</p><p>Created logos, branding materials, posters, flyers, promotional graphics, social-media content, and cover designs while working directly with clients and implementing revisions from feedback.</p><div class="tags"><span>Photoshop</span><span>Illustrator</span><span>Canva</span></div></div></article>
+        <article class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-meta">PROJECT-BASED</div><div class="timeline-card tilt-card"><h3>Freelance Website Designer & Developer</h3><p class="company">Local Businesses / Small Business Clients</p><p>Designed modern responsive websites with business information, service/product galleries, WhatsApp contact, maps/location, opening hours and customer-contact options, plus basic hosting and domain setup support.</p><div class="tags"><span>Responsive Web Design</span><span>Web Hosting</span><span>Domain Management</span></div></div></article>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projects">
+      <div class="section-heading reveal">
+        <span class="section-number">04</span>
+        <div><p>PROOF OF WORK</p><h2>Featured <span>Projects</span></h2></div>
+      </div>
+      <div class="project-filters reveal" role="group" aria-label="Project filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="web">Web Development</button>
+        <button class="filter" data-filter="software">Software</button>
+        <button class="filter" data-filter="ai">AI/ML</button>
+        <button class="filter" data-filter="iot">IoT</button>
+        <button class="filter" data-filter="design">Design</button>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card reveal tilt-card" data-category="web"><div class="project-visual project-proof"><span>01</span><img src="assets/projects/project-01.png" alt="Online Exam & Results Management System project proof screenshot" loading="lazy"><div class="proof-badge">PROJECT PREVIEW</div></div><div class="project-info"><div class="project-top"><span>WEB APPLICATION · GROUP PROJECT</span><b>COMPLETED</b></div><h3>Online Exam & Results Management System</h3><p>Online examination platform for managing exams, student assessments, results, and database-driven application functionality.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>JSP</span><span>Java</span></div></div></article>
+        <article class="project-card reveal tilt-card" data-category="web"><div class="project-visual project-proof"><span>02</span><img src="assets/projects/project-02.png" alt="Library Management System project proof screenshot" loading="lazy"><div class="proof-badge">PROJECT PREVIEW</div></div><div class="project-info"><div class="project-top"><span>WEB APPLICATION · GROUP PROJECT</span><b>COMPLETED</b></div><h3>Library Management System</h3><p>Web-based system for books, members, borrowing and returns, reservations, fines, and complete library record management.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>JSP</span><span>Java</span><span>SQL Server</span></div></div></article>
+        <article class="project-card reveal tilt-card" data-category="web"><div class="project-visual project-proof"><span>03</span><img src="assets/projects/project-03.png" alt="Online Food Delivery System project proof screenshot" loading="lazy"><div class="proof-badge">PROJECT PREVIEW</div></div><div class="project-info"><div class="project-top"><span>WEB APPLICATION · CLIENT PROJECT</span><b>COMPLETED</b></div><h3>Online Food Delivery System</h3><p>Customer-facing platform for food browsing, online ordering, customer management, payments, delivery tracking and database management.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span></div></div></article>
+        <article class="project-card reveal tilt-card" data-category="web"><div class="project-visual project-proof"><span>04</span><img src="assets/projects/project-04.png" alt="Event Booking System project proof screenshot" loading="lazy"><div class="proof-badge">PROJECT PREVIEW</div></div><div class="project-info"><div class="project-top"><span>WEB APPLICATION · CLIENT PROJECT</span><b>COMPLETED</b></div><h3>Event Booking System</h3><p>Event discovery and reservation solution with ticket booking, customer information, payment processing and reservation management.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span></div></div></article>
+        <article class="project-card reveal tilt-card" data-category="web"><div class="project-visual project-proof"><span>05</span><img src="assets/projects/project-05.png" alt="Grocery Management System project proof screenshot" loading="lazy"><div class="proof-badge">PROJECT PREVIEW</div></div><div class="project-info"><div class="project-top"><span>WEB APPLICATION · CLIENT PROJECT</span><b>COMPLETED</b></div><h3>Grocery Management System</h3><p>Management system covering products, inventory, customers, orders, billing, stock control and stock updates.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span></div></div></article>
+        <article class="project-card reveal tilt-card" data-category="software"><div class="project-visual project-proof"><span>06</span><img src="assets/projects/project-06.png" alt="Mini POS Software project proof screenshot" loading="lazy"><div class="proof-badge">PROJECT PREVIEW</div></div><div class="project-info"><div class="project-top"><span>DESKTOP APPLICATION · CLIENT PROJECT</span><b>COMPLETED</b></div><h3>Mini POS Software</h3><p>Desktop point-of-sale system for product, sales, billing, customer, inventory, stock updates and daily sales records.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Electron</span><span>SQLite</span></div></div></article>
+        <article class="project-card reveal tilt-card featured-project" data-category="ai"><div class="project-visual project-proof"><span>07</span><img src="assets/projects/project-07.png" alt="ObesiSense AI project proof screenshot" loading="lazy"><div class="proof-badge">PROJECT PREVIEW</div></div><div class="project-info"><div class="project-top"><span>AI / ML · ACADEMIC GROUP PROJECT</span><b>COMPLETED</b></div><h3>ObesiSense AI</h3><p>AI-powered obesity-level prediction system using physical, dietary, demographic and lifestyle information, classifying users into seven obesity categories with confidence and BMI-related insights.</p><div class="achievement">SVM: <strong>98.56% accuracy</strong> · <strong>98.53% Macro F1</strong></div><div class="tags"><span>Python</span><span>Scikit-learn</span><span>SVM</span><span>Streamlit</span><span>Pandas</span><span>NumPy</span></div></div></article>
+        <article class="project-card reveal tilt-card" data-category="iot"><div class="project-visual project-proof"><span>08</span><img src="assets/projects/project-08.png" alt="Smart Bin Monitoring System project proof screenshot" loading="lazy"><div class="proof-badge">PROJECT PREVIEW</div></div><div class="project-info"><div class="project-top"><span>IOT / EMBEDDED · GROUP PROJECT</span><b>COMPLETED</b></div><h3>Smart Bin Monitoring System</h3><p>Arduino-based smart waste system using ultrasonic, moisture and IR sensors for detection, wet/dry classification, automated segregation and fill-level monitoring.</p><div class="tags"><span>Arduino</span><span>C/C++</span><span>Ultrasonic</span><span>Moisture Sensor</span><span>IR Sensor</span><span>IoT</span></div></div></article>
+        <article class="project-card reveal tilt-card" data-category="design"><div class="project-visual project-proof"><span>09</span><img src="assets/projects/project-09.png" alt="Graphic Design Projects project proof screenshot" loading="lazy"><div class="proof-badge">PROJECT PREVIEW</div></div><div class="project-info"><div class="project-top"><span>CREATIVE DESIGN · FREELANCE</span><b>MULTIPLE PROJECTS</b></div><h3>Graphic Design Projects</h3><p>Creative client work including logos, posters, flyers, promotional materials, social-media graphics, cover designs and branding content.</p><div class="tags"><span>Photoshop</span><span>Illustrator</span><span>Canva</span></div></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="section-heading reveal"><span class="section-number">05</span><div><p>LEARNING PATH</p><h2>Education & <span>Courses</span></h2></div></div>
+      <div class="edu-grid">
+        <article class="edu-card primary-edu reveal tilt-card"><div class="edu-year">NOW</div><p class="mini-label">SRI LANKA INSTITUTE OF INFORMATION TECHNOLOGY</p><h3>BSc (Hons) in Information Technology</h3><h4>Specialization: Cyber Security</h4><p>Current: <strong>Year 2, Semester 2</strong> · Status: <strong>Ongoing</strong></p><div class="edu-orbit"></div></article>
+        <article class="edu-card reveal tilt-card"><div class="edu-year">2023</div><p class="mini-label">BADHURIYA CENTRAL COLLEGE · MAWANELLA</p><h3>G.C.E. Advanced Level</h3><h4>Commerce Stream</h4><p>Accounting · Business Studies · Information & Communication Technology</p><div class="result-row"><span>B</span><span>C</span><span>C</span></div></article>
+        <article class="edu-card reveal tilt-card"><div class="edu-year">2020</div><p class="mini-label">AL-AZHAR COLLEGE · HEMMATHAGAMA</p><h3>G.C.E. Ordinary Level</h3><h4>Completed</h4><div class="result-row large"><span>5A</span><span>3B</span><span>1C</span></div></article>
+      </div>
+      <div class="course-grid">
+        <article class="course-card reveal tilt-card"><span>01</span><div><p class="mini-label">UNIVERSITY OF MORATUWA · COMPLETED</p><h3>Python for Beginners</h3><p>Python fundamentals, programming concepts, logic, and Python development fundamentals.</p></div></article>
+        <article class="course-card reveal tilt-card"><span>02</span><div><p class="mini-label">UNIVERSITY OF MORATUWA · COMPLETED</p><h3>Web Design for Beginners</h3><p>Web-design fundamentals, HTML, CSS, basic web development concepts and webpage design.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="strengths">
+      <div class="section-heading reveal"><span class="section-number">06</span><div><p>BEYOND CODE</p><h2>Strengths & <span>Interests</span></h2></div></div>
+      <div class="soft-grid">
+        <article class="soft-card reveal"><span>◈</span><h3>Problem Solving</h3><p>Analyze problems and develop practical solutions through logical thinking.</p></article>
+        <article class="soft-card reveal"><span>◎</span><h3>Teamwork</h3><p>Collaborative experience through academic group projects and development tasks.</p></article>
+        <article class="soft-card reveal"><span>◫</span><h3>Communication</h3><p>Communicate ideas, requirements, and project information effectively.</p></article>
+        <article class="soft-card reveal"><span>⌁</span><h3>Time Management</h3><p>Organize tasks effectively and work toward project deadlines.</p></article>
+        <article class="soft-card reveal"><span>⌃</span><h3>Leadership</h3><p>Take responsibility, coordinate tasks, and contribute toward shared goals.</p></article>
+        <article class="soft-card reveal"><span>◇</span><h3>Critical Thinking</h3><p>Analyze requirements and evaluate suitable implementation approaches.</p></article>
+        <article class="soft-card reveal"><span>⊹</span><h3>Attention to Detail</h3><p>Focus on accuracy, functionality and quality in applications and creative work.</p></article>
+        <article class="soft-card reveal highlight-soft"><span>★</span><h3>Self-Learning</h3><p>Strong interest in independently learning technologies and continuously improving technical knowledge.</p></article>
+        <article class="soft-card reveal"><span>▣</span><h3>Project Management</h3><p>Experience contributing to projects from requirements through development and testing.</p></article>
+      </div>
+      <div class="interest-strip reveal"><span>Programming</span><i>•</i><span>Learning New Technologies</span><i>•</i><span>Exploring Cybersecurity</span><i>•</i><span>Sports</span><i>•</i><span>Creative Projects</span><i>•</i><span>Freelancing</span></div>
+      <div class="languages reveal"><p class="mini-label">LANGUAGES</p><div><span><b>Tamil</b><small>Native</small></span><span><b>Sinhala</b><small>Fluent</small></span><span><b>English</b><small>Good Working Proficiency</small></span></div></div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-orb orb-left"></div><div class="contact-orb orb-right"></div>
+      <div class="contact-card reveal">
+        <p class="mini-label">LET'S BUILD SOMETHING</p>
+        <h2>Have a project idea?<br><span>Let’s make it real.</span></h2>
+        <p>Have a project idea or looking for a developer for your next project? Feel free to get in touch. I am always interested in learning, building, and working on new technology projects.</p>
+        <div class="contact-actions"><a class="btn btn-primary magnetic" href="mailto:aakif2295@gmail.com"><span>Get In Touch</span><b>↗</b></a><a class="contact-link" href="tel:+94719002295">+94 71 900 2295</a></div>
+        <div class="contact-details"><span><small>EMAIL</small><a href="mailto:aakif2295@gmail.com">aakif2295@gmail.com</a></span><span><small>LOCATION</small><b>Sri Lanka</b></span><span><small>FOCUS</small><b>Cybersecurity / IT</b></span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><a href="#home" class="footer-brand footer-name">Aakif Ahamed</a><p>Designed & built for <strong>Aakif Ahamed</strong> · 3D Interactive Portfolio</p><a href="#home">Back to top ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
