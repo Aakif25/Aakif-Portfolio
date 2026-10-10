@@ -1,0 +1,17 @@
+{
+  "source": "intro.mp4",
+  "sourceDuration": 10.0,
+  "fps": 24.0,
+  "loopDuration": 9.5,
+  "crossfadeSeconds": 0.5,
+  "crop": "864:1080:528:0",
+  "dimensions": [
+    768,
+    960
+  ],
+  "portraitTimestamp": 8.0,
+  "audioSampleRate": 48000,
+  "audioSamples": 456000,
+  "content": "Stylized animated avatar supplied by the user; portrait extracted from the same clip.",
+  "notes": "Circular crossfade removes a hard boundary; overlapping motion and words can be perceptible during the 0.5-second dissolve. No retiming."
+}
