@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { PROFILE } from "@/lib/data";
@@ -52,7 +53,7 @@ export default function RootLayout({
       className={`${sans.variable} ${serif.variable} ${mono.variable}`}
     >
       <head><link rel="preload" href="/hero/poster.webp" as="image" fetchPriority="high" /></head>
-      <body>{children}</body>
+      <body>{children}<Analytics /></body>
     </html>
   );
 }
