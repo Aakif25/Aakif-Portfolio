@@ -145,9 +145,9 @@ export default function Hero() {
             {PROFILE.location} <span aria-hidden>↗</span>
           </p>
           <h1>
-            Student
+            Aakif
             <br />
-            <em>Developer.</em>
+            <em>Ahamed</em>
           </h1>
           <p className="hero-subtitle">{COPY.heroSubtitle}</p>
           <div className="hero-actions">
